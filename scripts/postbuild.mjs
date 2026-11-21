@@ -1,6 +1,8 @@
 // Strips files the Sites uploader refuses (hidden files and source maps)
 // from the build output, so `deploy.json` can point straight at dist/.
-import { readdirSync, rmSync, statSync } from 'node:fs'
+// A static build (GitHub Pages) also gets dist/404.html, a copy of index.html,
+// so a direct visit to a client-side route still loads the app.
+import { copyFileSync, existsSync, readdirSync, rmSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -15,4 +17,8 @@ function clean(dir) {
   }
 }
 
-clean(fileURLToPath(new URL('../dist', import.meta.url)))
+const out = fileURLToPath(new URL('../dist', import.meta.url))
+clean(out)
+
+const index = join(out, 'index.html')
+if (existsSync(index)) copyFileSync(index, join(out, '404.html'))

@@ -54,10 +54,13 @@ function Pages() {
   )
 }
 
+// '' at the domain root, '/portfolio-' when served from a GitHub Pages sub-path.
+const BASENAME = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 export function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <BrowserRouter>
+      <BrowserRouter basename={BASENAME}>
         <ToastProvider>
           <ScrollManager />
           <a href="#main" className="sr-only z-[100] rounded-full bg-violet px-5 py-3 text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3">

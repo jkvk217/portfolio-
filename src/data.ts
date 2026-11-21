@@ -29,6 +29,9 @@ export const MENU = [
   { label: 'Contact', to: '/contact' },
 ]
 
+/** A public asset URL that follows the deployed base path (GitHub Pages serves from /<repo>/). */
+const asset = (src: string) => `${import.meta.env.BASE_URL}${src.replace(/^\//, '')}`
+
 /*
   Photography and renders. Every image on the site goes through this one
   constant: swap `src` for your own file in public/images/ (or any URL) and
@@ -37,22 +40,22 @@ export const MENU = [
   in components/Holo.tsx.
 */
 export const IMAGES = {
-  aurora: { src: '/images/aurora.webp', alt: 'Soft translucent 3D forms in mint, peach and lilac on a pale background' },
-  fold: { src: '/images/fold.webp', alt: 'Geometric shapes pressed into cream cotton paper beside a stack of colour-blocked book covers' },
-  halcyon: { src: '/images/halcyon.webp', alt: 'Calm hotel lobby with a curved travertine reception desk and warm indirect light' },
-  kite: { src: '/images/kite.webp', alt: 'Orange technical jacket hung against a green wall in hard sunlight' },
-  meridian: { src: '/images/meridian.webp', alt: 'Two phones showing a banking app on a cobalt blue background' },
-  nocturne: { src: '/images/nocturne.webp', alt: 'Swirling violet, magenta and teal liquid on black' },
-  portrait: { src: '/images/portrait.webp', alt: 'A worktable with printed layouts, swatches and notes in morning light' },
-  ostra: { src: '/images/ostra.webp', alt: 'Ceramic jug and cups on linen in warm morning light' },
-  glass: { src: '/images/glass.webp', alt: 'Clear glass carafe and tumbler casting light on a pale grey surface' },
-  lookbook: { src: '/images/lookbook.webp', alt: 'Wooden bench with a folded throw beside a paper floor lamp in a bright room' },
-  holoKnot: { src: '/images/holo/knot.webp', alt: '' },
-  holoSphere: { src: '/images/holo/sphere.webp', alt: '' },
-  holoCloud: { src: '/images/holo/cloud.webp', alt: '' },
-  holoScissors: { src: '/images/holo/scissors.webp', alt: '' },
-  holoStar: { src: '/images/holo/star.webp', alt: '' },
-  holoPrism: { src: '/images/holo/prism.webp', alt: '' },
+  aurora: { src: asset('/images/aurora.webp'), alt: 'Soft translucent 3D forms in mint, peach and lilac on a pale background' },
+  fold: { src: asset('/images/fold.webp'), alt: 'Geometric shapes pressed into cream cotton paper beside a stack of colour-blocked book covers' },
+  halcyon: { src: asset('/images/halcyon.webp'), alt: 'Calm hotel lobby with a curved travertine reception desk and warm indirect light' },
+  kite: { src: asset('/images/kite.webp'), alt: 'Orange technical jacket hung against a green wall in hard sunlight' },
+  meridian: { src: asset('/images/meridian.webp'), alt: 'Two phones showing a banking app on a cobalt blue background' },
+  nocturne: { src: asset('/images/nocturne.webp'), alt: 'Swirling violet, magenta and teal liquid on black' },
+  portrait: { src: asset('/images/portrait.webp'), alt: 'A worktable with printed layouts, swatches and notes in morning light' },
+  ostra: { src: asset('/images/ostra.webp'), alt: 'Ceramic jug and cups on linen in warm morning light' },
+  glass: { src: asset('/images/glass.webp'), alt: 'Clear glass carafe and tumbler casting light on a pale grey surface' },
+  lookbook: { src: asset('/images/lookbook.webp'), alt: 'Wooden bench with a folded throw beside a paper floor lamp in a bright room' },
+  holoKnot: { src: asset('/images/holo/knot.webp'), alt: '' },
+  holoSphere: { src: asset('/images/holo/sphere.webp'), alt: '' },
+  holoCloud: { src: asset('/images/holo/cloud.webp'), alt: '' },
+  holoScissors: { src: asset('/images/holo/scissors.webp'), alt: '' },
+  holoStar: { src: asset('/images/holo/star.webp'), alt: '' },
+  holoPrism: { src: asset('/images/holo/prism.webp'), alt: '' },
 } as const satisfies Record<string, { src: string; alt: string }>
 export type ImageKey = keyof typeof IMAGES
 
