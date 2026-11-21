@@ -76,6 +76,24 @@ the objects stop floating and figures show their final value; fades remain.
 | `ExperienceRow.tsx` | One role: dates and place, title, employer, summary, highlights, tags |
 | Others | `Holo`, `CapabilityCard`, `Footer` |
 
+## Android app
+
+`android/` is a small native wrapper: one `WebView` activity serving the built
+site from inside the APK, so it works offline. It needs the Android SDK and a
+JDK (Android Studio's bundled JBR is fine). To rebuild after changing the site:
+
+```sh
+bun run build                                   # writes dist/client
+rm -rf android/app/src/main/assets/* \
+  && cp -r dist/client/. android/app/src/main/assets/
+cd android && ./gradlew assembleDebug           # app/build/outputs/apk/debug/
+```
+
+Set `JAVA_HOME` to a JDK 17+ and `ANDROID_HOME` to your SDK if the wrapper cannot
+find them. The debug APK installs on any phone running Android 7.0 or newer; it
+is signed with the local debug key, which is fine for personal side-loading but
+not for the Play Store.
+
 ## Deploy with Freebuff Sites
 
 `deploy.json` already points at the build output. After `bun run build`, deploy

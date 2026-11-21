@@ -8,3 +8,15 @@ dist
 *.log
 .freebuff/
 .cloud-attachments/
+
+# Android build output and the web bundle copied into the app
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/app/src/main/assets/
+*.apk
+
+# Local artefacts (PDF export, device screenshots)
+design-pdf/
+app-launch.png

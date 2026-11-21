@@ -16,7 +16,7 @@ export function About() {
         title={ABOUT.title}
         eyebrow={ABOUT.eyebrow}
         intro={ABOUT.intro}
-        art={<Holo kind="prism" motion />}
+        art={<Holo kind="prism" motion priority />}
       />
 
       <Card as="section" aria-label="About in numbers" tone="night" className="grid gap-8 p-6 sm:grid-cols-2 sm:p-8 lg:grid-cols-4">
