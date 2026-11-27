@@ -86,13 +86,18 @@ JDK (Android Studio's bundled JBR is fine). To rebuild after changing the site:
 bun run build                                   # writes dist/client
 rm -rf android/app/src/main/assets/* \
   && cp -r dist/client/. android/app/src/main/assets/
-cd android && ./gradlew assembleDebug           # app/build/outputs/apk/debug/
+cd android && ./gradlew assembleRelease         # app/build/outputs/apk/release/
 ```
 
+Release builds are signed with the key described by `android/keystore.properties`
+(`storeFile`, `storePassword`, `keyAlias`, `keyPassword`). That file and the
+keystore in `android/keystore/` are git-ignored: keep a copy of both somewhere
+safe, because an installed app can only be updated by an APK signed with the same
+key. Without the properties file the build still runs, but produces an unsigned
+APK.
+
 Set `JAVA_HOME` to a JDK 17+ and `ANDROID_HOME` to your SDK if the wrapper cannot
-find them. The debug APK installs on any phone running Android 7.0 or newer; it
-is signed with the local debug key, which is fine for personal side-loading but
-not for the Play Store.
+find them. The signed APK installs on any phone running Android 7.0 or newer.
 
 ## Deploy with Freebuff Sites
 

@@ -17,6 +17,12 @@ android/local.properties
 android/app/src/main/assets/
 *.apk
 
+# Android signing material: never commit the key or its passwords
+android/keystore.properties
+android/keystore/
+*.jks
+*.keystore
+
 # Local artefacts (PDF export, device screenshots)
 design-pdf/
-app-launch.png
+app-*.png
