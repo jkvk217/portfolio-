@@ -1,16 +1,26 @@
 // Every string and figure for this portfolio lives here.
 // Start editing from the top: SITE, then the page sections below it.
 
+const EMAIL = 'jackhvink@gmail.com'
+
+/**
+ * Gmail's web compose URL. A `mailto:` link does nothing on a computer with no
+ * mail app registered, which is most Windows PCs, so every email link uses this
+ * and opens in a new tab instead.
+ */
+export const emailLink = (subject?: string) =>
+  `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}${subject ? `&su=${encodeURIComponent(subject)}` : ''}`
+
 export const SITE = {
   name: 'Jack Vink',
   tagline: 'Technical support and customer service',
-  email: 'jackhvink@gmail.com',
+  email: EMAIL,
   phone: '+1 (217) 953-4486',
   address: ['Springfield, IL 62702'],
   hours: 'Open to full-time, part-time, contract and remote roles',
   socials: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-    { label: 'Email', href: 'mailto:jackhvink@gmail.com' },
+    { label: 'Email', href: emailLink() },
   ],
 }
 

@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 
-import { FOOTER, MENU, SITE } from '../data'
+import { FOOTER, MENU, SITE, emailLink } from '../data'
 import { Logo } from './Bits'
 import { Card } from './Card'
 
@@ -13,7 +13,9 @@ export function Footer() {
             <p className="display text-[clamp(1.8rem,1.4rem+1.2vw,2.6rem)] leading-[0.95]">Let’s talk</p>
             <p className="mt-3 mb-6 text-night-muted">{FOOTER.note}</p>
             <a
-              href={`mailto:${SITE.email}`}
+              href={emailLink()}
+              target="_blank"
+              rel="noreferrer"
               className="round inline-flex min-h-14 items-center gap-2 rounded-full bg-white/10 px-6 font-medium text-white transition-colors hov:bg-white/16"
             >
               {SITE.email}

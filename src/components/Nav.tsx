@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
 
-import { MENU, NAV, SITE } from '../data'
+import { MENU, NAV, SITE, emailLink } from '../data'
 import { cx } from '../lib/cx'
 import { IconButton } from './Button'
 import { Logo } from './Bits'
@@ -68,7 +68,7 @@ export function Nav({ tone = 'white' }: { tone?: 'white' | 'night' }) {
         <div className="mt-10 grid gap-6 text-sm text-night-muted sm:grid-cols-2">
           <div>
             <p className="caps mb-2 text-white">Say hello</p>
-            <a className="block min-h-10 py-2 text-white underline-offset-4 hov:underline" href={`mailto:${SITE.email}`}>
+            <a className="block min-h-10 py-2 text-white underline-offset-4 hov:underline" href={emailLink()} target="_blank" rel="noreferrer">
               {SITE.email}
             </a>
             <a className="block min-h-10 py-2 text-white underline-offset-4 hov:underline" href={`tel:${SITE.phone.replace(/\s/g, '')}`}>

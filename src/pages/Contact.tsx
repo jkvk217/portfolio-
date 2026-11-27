@@ -4,7 +4,7 @@ import { Card } from '../components/Card'
 import { Holo } from '../components/Holo'
 import { OpenToPanel } from '../components/OpenToPanel'
 import { PageHero } from '../components/Nav'
-import { CONTACT, SITE } from '../data'
+import { CONTACT, SITE, emailLink } from '../data'
 import { useDocumentTitle } from '../lib/storage'
 
 export function Contact() {
@@ -18,7 +18,9 @@ export function Contact() {
           <div>
             <p className="caps text-muted">Email</p>
             <a
-              href={`mailto:${SITE.email}`}
+              href={emailLink()}
+              target="_blank"
+              rel="noreferrer"
               className="mt-2 inline-flex min-h-10 items-center text-[clamp(1.4rem,1rem+1.6vw,2.6rem)] leading-[1.1] tracking-[-0.04em] break-all text-ink transition-colors hov:text-violet"
             >
               {SITE.email}
@@ -46,7 +48,9 @@ export function Contact() {
               {SITE.hours}. Available on site around Springfield, Illinois. Weekday mornings are the easiest time to reach me.
             </p>
             <a
-              href={`mailto:${SITE.email}?subject=Hello%20Jack`}
+              href={emailLink('Hello Jack')}
+              target="_blank"
+              rel="noreferrer"
               className="round mt-6 inline-flex min-h-14 items-center gap-2 rounded-full bg-violet px-7 font-medium text-white transition-colors hov:bg-violet-deep"
             >
               <Mail className="size-5" aria-hidden />
