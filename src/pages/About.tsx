@@ -20,6 +20,8 @@ export function About() {
         art={<Holo kind="prism" motion priority />}
       />
 
+      <OpenToPanel columns={4} />
+
       <Card as="section" aria-label="About in numbers" tone="night" className="grid gap-8 p-6 sm:grid-cols-2 sm:p-8 lg:grid-cols-4">
         {ABOUT.stats.map((s) => (
           <div key={s.label}>
@@ -30,8 +32,6 @@ export function About() {
           </div>
         ))}
       </Card>
-
-      <OpenToPanel columns={4} />
 
       <div className="grid gap-2 lg:grid-cols-[1.1fr_1fr]">
         <Photo image="portrait" className="min-h-[420px] rounded-[var(--radius-card)]" />
