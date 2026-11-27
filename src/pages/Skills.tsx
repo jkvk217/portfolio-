@@ -16,7 +16,7 @@ export function Skills() {
       <PageHero
         title={['What I', 'can do']}
         eyebrow="Five areas, one person"
-        intro="Technical support, customer service, operations, service advising and digital media. Whichever the ticket is, the job starts in the same place: understand it, then fix it properly."
+        intro="Technical support, customer service, operations, administrative support and retail operations. Whichever the ticket is, the job starts in the same place: understand it, then fix it properly."
         art={<Holo kind="sphere" motion />}
         aside={
           <ul className="mt-6 flex flex-wrap gap-1.5">

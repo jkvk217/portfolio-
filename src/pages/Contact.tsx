@@ -2,6 +2,7 @@ import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react'
 
 import { Card } from '../components/Card'
 import { Holo } from '../components/Holo'
+import { OpenToPanel } from '../components/OpenToPanel'
 import { PageHero } from '../components/Nav'
 import { CONTACT, SITE } from '../data'
 import { useDocumentTitle } from '../lib/storage'
@@ -41,7 +42,9 @@ export function Contact() {
           </div>
           <div className="border-t border-line pt-8">
             <p className="caps text-muted">Availability</p>
-            <p className="mt-2 max-w-md text-ink-2">{SITE.hours}, on site around Springfield or remote. Weekday mornings are the easiest time to reach me.</p>
+            <p className="mt-2 max-w-md text-ink-2">
+              {SITE.hours}. Available on site around Springfield, Illinois. Weekday mornings are the easiest time to reach me.
+            </p>
             <a
               href={`mailto:${SITE.email}?subject=Hello%20Jack`}
               className="round mt-6 inline-flex min-h-14 items-center gap-2 rounded-full bg-violet px-7 font-medium text-white transition-colors hov:bg-violet-deep"
@@ -54,21 +57,6 @@ export function Contact() {
         </Card>
 
         <div className="grid gap-2">
-          <Card tone="night" className="grid gap-6 p-6 sm:p-8">
-            <div>
-              <h2 className="caps text-night-muted">Open to</h2>
-              <ul className="mt-4 grid gap-3">
-                {CONTACT.openTo.map((o) => (
-                  <li key={o} className="flex items-start gap-3 text-white">
-                    <span aria-hidden className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-violet-light" />
-                    {o}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <p className="text-[15px] text-night-muted">References from previous employers are available on request.</p>
-          </Card>
-
           <Card className="p-6 sm:p-8">
             <h2 className="caps text-muted">Elsewhere</h2>
             <ul className="mt-3 divide-y divide-line">
@@ -95,6 +83,8 @@ export function Contact() {
           </Card>
         </div>
       </div>
+
+      <OpenToPanel columns={4} />
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { ButtonLink } from '../components/Button'
 import { Card } from '../components/Card'
 import { Holo } from '../components/Holo'
 import { PageHero } from '../components/Nav'
+import { OpenToPanel } from '../components/OpenToPanel'
 import { ABOUT } from '../data'
 import { useDocumentTitle } from '../lib/storage'
 
@@ -29,6 +30,8 @@ export function About() {
           </div>
         ))}
       </Card>
+
+      <OpenToPanel columns={4} />
 
       <div className="grid gap-2 lg:grid-cols-[1.1fr_1fr]">
         <Photo image="portrait" className="min-h-[420px] rounded-[var(--radius-card)]" />
