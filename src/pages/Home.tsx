@@ -32,21 +32,21 @@ function Hero() {
           initial={{ opacity: 0, scale: 0.9, rotate: -8 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 1.4, ease: EASE }}
-          className="order-3 mx-auto -my-4 w-[min(92vw,480px)] lg:absolute lg:top-[3%] lg:left-[11%] lg:m-0 lg:w-[min(39vw,calc((100svh-262px)*0.86),640px)]"
+          className="order-3 mx-auto mt-6 mb-2 w-[min(88vw,480px)] lg:absolute lg:top-[4%] lg:left-[24%] lg:m-0 lg:w-[min(30vw,calc((100svh-262px)*0.7),560px)]"
         >
           <Holo kind="knot" motion priority />
         </motion.div>
 
         {/* Captions, left */}
         <p className="caps relative z-10 order-2 mt-10 max-w-[12.5rem] lg:absolute lg:top-[40%] lg:left-0 lg:mt-0">{HOME.captionTop}</p>
-        <p className="caps relative z-10 order-5 mt-8 max-w-[15rem] self-end text-right lg:absolute lg:top-[80%] lg:left-[11%] lg:mt-0 lg:self-auto">{HOME.captionBottom}</p>
+        <p className="caps relative z-10 order-5 mt-8 max-w-[15rem] self-end text-right lg:absolute lg:top-[80%] lg:left-0 lg:mt-0 lg:max-w-[13rem] lg:self-auto">{HOME.captionBottom}</p>
 
         {/* Reach out + headline, bottom right */}
         <div className="relative z-10 order-4 mt-6 flex flex-col items-end lg:absolute lg:right-0 lg:bottom-0 lg:mt-0">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.55, ease: EASE }} className="mb-[clamp(1rem,4svh,2.6rem)]">
             <ArrowLink to="/contact">{HOME.reachOut}</ArrowLink>
           </motion.div>
-          <h1 id="hero-title" className="display text-right text-[clamp(3.3rem,17.2vw,6rem)] sm:text-[clamp(4rem,13vw,8rem)] lg:text-[min(10.1vw,17svh,10.6rem)]">
+          <h1 id="hero-title" className="display text-right text-[clamp(3.1rem,15.6vw,5.4rem)] sm:text-[clamp(3.6rem,11.4vw,7rem)] lg:text-[min(8.2vw,15svh,8.6rem)]">
             {HOME.headline.map((line, i) => (
               <span key={line} className="block overflow-hidden pb-[0.04em]">
                 <motion.span className="block" initial={{ y: '105%' }} animate={{ y: 0 }} transition={{ duration: 1.1, delay: 0.15 + i * 0.12, ease: EASE }}>
@@ -68,7 +68,7 @@ function Skills() {
     <section aria-labelledby="skills-title" className="grid gap-2 md:grid-cols-2">
       <Card className="flex min-h-[340px] flex-col p-6 sm:p-8 md:min-h-0">
         <Title id="skills-title" lines={HOME.skillsTitle} className="relative z-10 self-end" />
-        <div aria-hidden className="pointer-events-none absolute bottom-[-16%] left-[-6%] w-[min(78%,480px)]">
+        <div aria-hidden className="my-4 w-[min(48%,200px)]">
           <Holo kind="sphere" motion />
         </div>
         <ArrowLink to="/skills" tone="ink" size="sm" className="relative z-10 mt-auto self-end">
