@@ -80,7 +80,7 @@ export const HOME = {
   ],
   captionTop: 'Fifteen years of keeping systems, stock and customers moving.',
   captionBottom: 'Electrical troubleshooting, POS support and plain-language documentation.',
-  headline: ['Technical and', 'customer support', 'specialists'],
+  headline: ['Technical', 'support', 'specialist'],
   reachOut: 'Get in touch',
   skillsTitle: ['What I', 'bring'],
   manifestoTitle: ['Calm when', 'it breaks'],

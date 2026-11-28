@@ -46,7 +46,7 @@ function Hero() {
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.55, ease: EASE }} className="mb-[clamp(1rem,4svh,2.6rem)]">
             <ArrowLink to="/contact">{HOME.reachOut}</ArrowLink>
           </motion.div>
-          <h1 id="hero-title" className="display text-right text-[clamp(1.9rem,8vw,2.8rem)] sm:text-[clamp(2.4rem,7.6vw,4.2rem)] lg:text-[min(4.2vw,8.5svh,5.8rem)]">
+          <h1 id="hero-title" className="display text-right text-[clamp(3.3rem,17.2vw,6rem)] sm:text-[clamp(4rem,13vw,8rem)] lg:text-[min(10.1vw,17svh,10.6rem)]">
             {HOME.headline.map((line, i) => (
               <span key={line} className="block overflow-hidden pb-[0.04em]">
                 <motion.span className="block" initial={{ y: '105%' }} animate={{ y: 0 }} transition={{ duration: 1.1, delay: 0.15 + i * 0.12, ease: EASE }}>
