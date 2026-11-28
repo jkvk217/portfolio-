@@ -67,7 +67,7 @@ export function Footer() {
         </div>
         <p
           aria-hidden
-          className="display mt-16 -mb-[0.12em] text-center text-[clamp(2.6rem,-0.5rem+13vw,13rem)] leading-[0.85] tracking-[-0.07em] text-white select-none"
+          className="display mt-16 -mb-[0.12em] text-center text-[clamp(2.6rem,-0.5rem+13vw,13rem)] leading-[0.85] tracking-[-0.07em] text-white select-none [word-spacing:0.22em]"
         >
           Jack Vink
         </p>
