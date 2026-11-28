@@ -12,7 +12,7 @@ export const emailLink = (subject?: string) =>
   `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}${subject ? `&su=${encodeURIComponent(subject)}` : ''}`
 
 export const SITE = {
-  name: 'Jack Vink',
+  name: 'Jack H. Vink',
   tagline: 'Technical support and customer service',
   email: EMAIL,
   phone: '+1 (217) 953-4486',

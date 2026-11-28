@@ -3,7 +3,7 @@ import { animate, motion, useInView, useReducedMotion, type HTMLMotionProps } fr
 import { useEffect, useRef, useState, type ButtonHTMLAttributes, type ImgHTMLAttributes, type ReactNode } from 'react'
 import { Link, type LinkProps } from 'react-router'
 
-import { IMAGES, type ImageKey } from '../data'
+import { IMAGES, SITE, type ImageKey } from '../data'
 import { cx } from '../lib/cx'
 
 /** The violet "Reach out ↗" link: caps text with an arrow that nudges on hover. */
@@ -46,7 +46,7 @@ export function Logo({ wordmark = false, className, light = false }: { wordmark?
         <circle cx="16" cy="16" r="13" fill="none" stroke={light ? '#fff' : 'var(--color-violet)'} strokeWidth="2.4" />
         <circle cx="16" cy="16" r="6.5" fill={light ? '#fff' : 'var(--color-violet)'} />
       </svg>
-      {wordmark && <span className="text-lg font-semibold tracking-[-0.04em]">Jack Vink</span>}
+      {wordmark && <span className="text-lg font-semibold tracking-[-0.04em] whitespace-nowrap">{SITE.name}</span>}
     </span>
   )
 }

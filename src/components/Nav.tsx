@@ -17,7 +17,7 @@ export function Nav({ tone = 'white' }: { tone?: 'white' | 'night' }) {
   return (
     <header className="relative z-10 flex h-14 items-center justify-between gap-4">
       <Link to="/" aria-label={`${SITE.name} home`} className="round -m-1 rounded-full p-1">
-        <Logo light={light} />
+        <Logo light={light} wordmark />
       </Link>
       <nav aria-label="Main" className="hidden md:block">
         <ul className="flex items-center gap-[clamp(2rem,1rem+3.4vw,5.5rem)]">
