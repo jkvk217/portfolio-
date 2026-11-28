@@ -119,7 +119,7 @@ export function PageHero({
           {aside}
         </div>
         {art ? (
-          <div className="pointer-events-none order-2 mx-auto w-[min(62vw,300px)] self-center lg:w-[min(22vw,340px)] lg:-translate-x-[8%]" aria-hidden>
+          <div className="pointer-events-none order-2 mx-auto w-[min(62vw,300px)] self-center lg:w-[min(20vw,320px)]" aria-hidden>
             {art}
           </div>
         ) : (
